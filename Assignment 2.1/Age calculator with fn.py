@@ -10,7 +10,7 @@ def subtraction ( x, y):
         return x-y
 
 #Function for calculating age
-def user_age (birthyear,birthmonth,birthday):   
+def user_age ():   
         today = datetime.date.today()
         currentyear = today.year
         currentmonth = today.month
@@ -21,7 +21,7 @@ def user_age (birthyear,birthmonth,birthday):
         ageyears = int(daysdiff/365)
         agemonths = int(((daysdiff%365)/30))
         agedays = int(((daysdiff%365)%30))
-        return ageyears,agemonths,agedays
+        print ("You are ",ageyears,"years",agemonths,"months and ",agedays,"days old" )
 
 #Get the users name
 name = input("Enter your name: ")
@@ -63,17 +63,7 @@ while True:
                 birthyear = int( input("Birth year: "))
                 birthmonth = int (input("Birth month: "))
                 birthday = int(input("Birth day: "))
-                today = datetime.date.today()
-                currentyear = today.year
-                currentmonth = today.month
-                currentday = today.day
-                currentdiff = int(((currentyear*364)+(currentmonth*30)+currentday))
-                birthdiff = int(((birthyear*364)+(birthmonth*30)+birthday))
-                daysdiff = int((currentdiff-birthdiff))
-                ageyears = int(daysdiff/365)
-                agemonths = int(((daysdiff%365)/30))
-                agedays = int(((daysdiff%365)%30))
-                print("Your age is " ,ageyears, "years, " , agemonths , "months and " ,agedays, "days.")
+                user_age()
                 
         #Code for closing 
         elif choice1 == '3' :
